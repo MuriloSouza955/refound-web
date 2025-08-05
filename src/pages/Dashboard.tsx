@@ -20,8 +20,8 @@ const REFOUND_EXAMPLE = {
 export function Dashboard() {
   const [name, setName] = useState("");
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(10);
-  const [refunds, setRefunds] = useState<RefundItemProps[]>([REFOUND_EXAMPLE]);
+  const [totalPages] = useState(10);
+  const [refunds] = useState<RefundItemProps[]>([REFOUND_EXAMPLE]);
 
   function fetchRefound(e: React.FormEvent) {
     e.preventDefault();

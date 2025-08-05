@@ -10,13 +10,13 @@ const isLoading = false;
 
 const session = {
   user: {
-    role: ""
-  }
-}
+    role: "",
+  },
+};
 
-export function Routes(){
-  function Route(){
-    switch(session?.user.role){
+export function Routes() {
+  function Route() {
+    switch (session?.user.role) {
       case "employee":
         return <EmployeeRoutes />;
       case "manager":
@@ -25,7 +25,7 @@ export function Routes(){
         return <AuthRoutes />;
     }
   }
-  if(isLoading){
+  if (isLoading) {
     return <Loading />;
   }
   return (
