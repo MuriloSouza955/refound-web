@@ -14,8 +14,8 @@ const REFOUND_EXAMPLE = {
   name: "João Silva",
   category: "Transporte",
   amount: formatCurrency(50.75),
-  categoryImg: CATEGORIES["transport"].icon
-}
+  categoryImg: CATEGORIES["transport"].icon,
+};
 
 export function Dashboard() {
   const [name, setName] = useState("");
@@ -28,12 +28,12 @@ export function Dashboard() {
     console.log(name);
   }
 
-  function handlePagination(action: "next" | "previous"){
+  function handlePagination(action: "next" | "previous") {
     setPage((prevPage) => {
-      if(action === "next" && prevPage < totalPages) {
+      if (action === "next" && prevPage < totalPages) {
         return prevPage + 1;
       }
-      if(action === "previous" && prevPage > 1) {
+      if (action === "previous" && prevPage > 1) {
         return prevPage - 1;
       }
       return prevPage;
@@ -54,17 +54,14 @@ export function Dashboard() {
           onChange={(e) => setName(e.target.value)}
         />
         <Button type={"submit"} variant="icon">
-          <img src={searchSvg} alt="Ícone de pesquisar"
-          className="w-5" />
+          <img src={searchSvg} alt="Ícone de pesquisar" className="w-5" />
         </Button>
       </form>
 
       <div className="my-6 flex flex-col gap-4 max-h-[342px] overflow-y-scroll">
-        {
-          refunds.map((item) => (
-            <RefundItem key={item.id} data={item} href={`/refound/${item.id}`} />
-          ))
-        }
+        {refunds.map((item) => (
+          <RefundItem key={item.id} data={item} href={`/refound/${item.id}`} />
+        ))}
         <RefundItem data={REFOUND_EXAMPLE} href="/refound/7" />
       </div>
       <Pagination
