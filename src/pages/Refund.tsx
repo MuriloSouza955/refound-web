@@ -9,7 +9,7 @@ import { Select } from "../components/Select";
 import { Upload } from "../components/Upload";
 import { Button } from "../components/Button";
 
-export function Refound() {
+export function Refund() {
   const [name, setName] = useState("Teste");
   const [amount, setAmount] = useState("34");
   const [category, setCategory] = useState("transport");

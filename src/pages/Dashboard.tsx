@@ -9,7 +9,7 @@ import { Pagination } from "../components/Pagination";
 import { RefundItem, type RefundItemProps } from "../components/RefundItem";
 import { CATEGORIES } from "../utils/categories";
 
-const REFOUND_EXAMPLE = {
+const REFUND_EXAMPLE = {
   id: "123",
   name: "João Silva",
   category: "Transporte",
@@ -21,9 +21,9 @@ export function Dashboard() {
   const [name, setName] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages] = useState(10);
-  const [refunds] = useState<RefundItemProps[]>([REFOUND_EXAMPLE]);
+  const [refunds] = useState<RefundItemProps[]>([REFUND_EXAMPLE]);
 
-  function fetchRefound(e: React.FormEvent) {
+  function fetchRefund(e: React.FormEvent) {
     e.preventDefault();
     console.log(name);
   }
@@ -45,7 +45,7 @@ export function Dashboard() {
       <h1 className="text-gray-100 font-bold text-xl flex-1">Solicitações</h1>
 
       <form
-        onSubmit={fetchRefound}
+        onSubmit={fetchRefund}
         action=""
         className="flex flex-1 items-center justify-between pb-6 border-b-[1px] border-b-gray-400 md:flex-row gap-2 mt-6"
       >
@@ -60,9 +60,9 @@ export function Dashboard() {
 
       <div className="my-6 flex flex-col gap-4 max-h-[342px] overflow-y-scroll">
         {refunds.map((item) => (
-          <RefundItem key={item.id} data={item} href={`/refound/${item.id}`} />
+          <RefundItem key={item.id} data={item} href={`/refund/${item.id}`} />
         ))}
-        <RefundItem data={REFOUND_EXAMPLE} href="/refound/7" />
+        <RefundItem data={REFUND_EXAMPLE} href="/refund/7" />
       </div>
       <Pagination
         current={page}
