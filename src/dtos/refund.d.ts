@@ -1,0 +1,25 @@
+import { CategoriesAPIEnum } from "./categories"
+import type { string } from "zod"
+
+type RefundAPIResponse={
+  category: any
+  id: string
+  userId: string
+  name: string
+  categories: CategoriesAPIEnum
+  amount: number
+  filename: string
+  user: {
+    name: string
+  }
+}
+
+type RefundsPaginationAPIResponse = {
+  refunds: RefundAPIResponse[],
+  pagination: {
+    page: number
+    perPage: number
+    totalRecords: number
+    totalPages: number
+  }
+}
